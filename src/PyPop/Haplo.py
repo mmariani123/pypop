@@ -546,6 +546,35 @@ class Emhaplofreq(Haplo):
          'DQA1' and 'DPB1' loci followed by est. of haplotypes for
          'DRB1' and 'DQB1' loci.
         """
+    def ald_test(self,\
+                 n_loci,\
+                 haplotype,\
+                 hap_prob,\
+                 compute_ALD=True):  
+        if n_loci == 2:
+            dprime, Wn, ALD_1_2, ALD_2_1 = _compute_LD(haplotype, hap_prob, compute_ALD=True, debug=self.debug)  
+
+            # output LD to XML
+            # FIXME just summary stats for the moment
+            self.stream.opentag('linkagediseq')
+            self.stream.writeln()
+            # hardcode 0 and 1, because we are only ever doing pairwise (for now)
+            self.stream.opentag('summary', first="0", second="1")
+            self.stream.tagContents('wn', "%g" % Wn)
+            self.stream.writeln()
+            # FIXME have no chisq test here for the moment
+            self.stream.writeln()
+            self.stream.tagContents('dprime', "%g" % dprime)
+            self.stream.writeln()
+            self.stream.tagContents('ALD_1_2', "%g" % ALD_1_2)
+            self.stream.writeln()
+            self.stream.tagContents('ALD_2_1', "%g" % ALD_2_1)
+            self.stream.writeln()
+            self.stream.closetag('summary')
+            self.stream.writeln()
+            self.stream.closetag('linkagediseq')
+            self.stream.writeln()
+            
         self._runEmhaplofreq(locusKeys=locusKeys,
                              numInitCond=numInitCond,
                              permutationFlag=0,

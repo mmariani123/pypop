@@ -1226,11 +1226,16 @@ at least 1000 is recommended.  A value of '1' is not permitted.""")
                               numPermuInitCond=numPermuInitCond,
                               haploSuppressFlag=0,
                               haplosToShow=twoLocusHaplosToShow)
-
-          # serialize end to XML
-          haplo.serializeEnd()
-
-
+            
+        try:
+          #need the haplotype and freq arguments below.
+          haplo.ald_test()
+        except NoOptionError:
+            pass
+        
+        # serialize end to XML
+        haplo.serializeEnd()
+        
     def _genTextOutput(self):
 
         if self.use_libxsltmod:
