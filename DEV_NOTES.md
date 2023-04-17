@@ -1,5 +1,22 @@
 # Developer notes
 
+## MM ALD testing 04/17/2023
+
+Hi Alex, after meeting with Rich, we would like the below output to be completed
+for ALD_1_2 and ALD_2_1 added to the emhaplofreq output section for 2 loci prior 
+to the manuscript update (I know we are working towards all loci eventually) and 
+using haplostats. So fpr now I made a little function at line 549 in Haplo.py 
+and included it in Main.py at line 1230. I need to know the inputs to use in Main,
+Also any python feedback for tips are always welcome, you have been very informative
+and helpful thus far, thank you again. 
+
+Pairwise LD estimates
+---------------------
+Locus pair            D      D'        Wn   ln(L_1)   ln(L_0)         S   ALD_1_2   ALD_2_1<br>
+A:C             0.02600 0.86996   0.77408    -36.04    -55.27     38.45         *         *<br>
+A:B                  NA      NA        NA    -26.51    -26.51      0.00         *         *<br>
+C:B                  NA      NA        NA    -32.10    -32.10      0.00         *         *<br>
+
 ## External dependencies
 
 * ```swig``` (Simple Wrapper Interface Generator) (build-time only)
