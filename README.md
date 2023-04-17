@@ -10,10 +10,10 @@ and helpful thus far, thank you again.
 
 Pairwise LD estimates
 ---------------------
-Locus pair            D      D'        Wn   ln(L_1)   ln(L_0)         S   ALD_1_2   ALD_2_1\n
-A:C             0.02600 0.86996   0.77408    -36.04    -55.27     38.45         *         *\n
-A:B                  NA      NA        NA    -26.51    -26.51      0.00         *         *\n
-C:B                  NA      NA        NA    -32.10    -32.10      0.00         *         *\n
+Locus pair            D      D'        Wn   ln(L_1)   ln(L_0)         S   ALD_1_2   ALD_2_1<br>
+A:C             0.02600 0.86996   0.77408    -36.04    -55.27     38.45         *         *<br>
+A:B                  NA      NA        NA    -26.51    -26.51      0.00         *         *<br>
+C:B                  NA      NA        NA    -32.10    -32.10      0.00         *         *<br>
 
 # Python for Population Genomics (PyPop)
 
